@@ -27,7 +27,7 @@ export default function Home({productData}:Props) {
 // =========== SSR data fetching =======================
 
 export const getServerSideProps = async ()=>{
-  const productData = await (await fetch('http://localhost:3000/api/productdata')).json();
+  const productData = await (await fetch('https://radhe-ecom-web-hfa8-git-main-radhedhabas.vercel.app/api/productdata')).json();
   return {
     props:{productData},
   }
