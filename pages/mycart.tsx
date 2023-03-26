@@ -23,7 +23,7 @@ function MyCart() {
         const stripe = await stripePromise;
 
         // create a checkout session 
-        const checkoutSession = await axios.post("/api/create-checkout-session", {
+        const checkoutSession = await axios.post("https://radhe-ecom-web-hfa8-git-main-radhedhabas.vercel.app/api/create-checkout-session", {
             items: cartData,
             email: session?.user?.email,
         });
