@@ -27,12 +27,15 @@ function MyCart() {
             items: cartData,
             email: session?.user?.email,
         });
-console.log("Hellop ")
+ 
         const result: any = await stripe?.redirectToCheckout({
             sessionId: checkoutSession.data.id,
         });
         if (result?.error) {
             alert(result?.error.message);
+        }
+        else {
+        dispatch(resetCart());
         }
          
     }
