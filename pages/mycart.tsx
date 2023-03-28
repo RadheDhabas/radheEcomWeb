@@ -36,8 +36,21 @@ function MyCart() {
         }
         else {
         dispatch(resetCart());
-        }
-         
+        } 
+    }
+    // Checkout 2 without stripe payment
+       const handelCheckout2 = async()=>{
+
+      let response=  await axios.post('/api/email',{
+            items: cartData,
+            user: session?.user,
+          });
+          if(response.status==200){
+            setTimeout(async()=>{
+              await  push('/success');
+                dispatch(resetCart(cartData)); 
+            },1000)
+          }
     }
     return (
         <>
