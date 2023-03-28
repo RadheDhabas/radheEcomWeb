@@ -18,7 +18,7 @@ function MyCart() {
     const subtotal_of_cart_item = cartData.reduce((a: any, b: any) => a + b.quantity * b.price, 0)
     const { data: session } = useSession();
     const stripePromise = loadStripe(process.env.stripe_publishable_key);
-
+const {push} = useRouter();
     const handelCheckout = async () => {
         const stripe = await stripePromise;
 
