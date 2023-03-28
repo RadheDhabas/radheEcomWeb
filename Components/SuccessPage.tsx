@@ -1,9 +1,14 @@
-import React from 'react'
-
+import React from 'react' 
+import Image from 'next/image'
+import style from '../styles/Success.module.css'
 function SuccessPage() {
+    
   return (
-    <div>
-      Success Page
+    <div className={style.successpage_body}>
+      <Image src={'/success.gif'} height={200} width={200} alt="Picture of the author"></Image>
+      <div className={style.success_text}>
+        Order Placed Successfully
+      </div>
     </div>
   )
 }
