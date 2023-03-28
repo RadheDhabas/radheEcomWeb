@@ -101,7 +101,7 @@ function MyCart() {
                                     <div className={`${style.checkout_btn}`}>
                                         {
                                             userInfo ?
-                                                <button onClick={handelCheckout}>
+                                                <button onClick={handelCheckout2}>
                                                     Checkout
                                                 </button>
                                                 :
