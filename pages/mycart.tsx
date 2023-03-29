@@ -47,6 +47,7 @@ const {push} = useRouter();
             user: session?.user,
           });
           if(response.status==200){
+              console.log(response);
             setTimeout(async()=>{
               await  push('/success');
                 dispatch(resetCart(cartData)); 
