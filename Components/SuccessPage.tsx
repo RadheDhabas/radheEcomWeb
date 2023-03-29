@@ -1,7 +1,9 @@
 import React from 'react' 
 import Image from 'next/image'
 import style from '../styles/Success.module.css'
+import {useSession} from 'next-auth/react';
 function SuccessPage() {
+     const {data:session} = useSession(); 
     
   return (
     <div className={style.successpage_body}>
