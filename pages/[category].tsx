@@ -21,7 +21,7 @@ function Category({ productData }: any) {
     )
 }
 export const getServerSideProps = async () => {
-    const productData = await (await fetch('https://radhe-ecom-web-hfa8-git-main-radhedhabas.vercel.app/api/productdata')).json();
+    const productData = await (await fetch('https://radhe-ecom-web.vercel.app/api/productdata')).json();
     return {
         props: { productData },
     }
