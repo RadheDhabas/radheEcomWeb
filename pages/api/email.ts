@@ -59,7 +59,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return;
   }
 
-  res.status(200).end(JSON.stringify({ message: 'Send Mail' }))
+  res.status(200).end(JSON.stringify({ message: {
+  name:user.name,
+     email:user.email,
+     total_cartvalue:total_cartvalue
+  } }))
 }
 
  
