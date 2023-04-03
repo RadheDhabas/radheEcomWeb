@@ -21,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   </td>
   </tr>
  `);  
- const html = html_content.reduce((a:any,b:any)=>a+b); 
+ const html = await html_content.reduce((a:any,b:any)=>a+b); 
   const client = new SMTPClient({
     user: process.env.mail,
     password: process.env.password,
@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   try {
-    const message = client.sendAsync({
+    const message = await client.sendAsync({
       text: `username:${user.name}}`,
       from: `${process.env.mail}`,
       to: user.email,
