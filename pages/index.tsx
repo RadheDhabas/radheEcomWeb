@@ -3,11 +3,28 @@ import Script from 'next/script'
 import Product_listing_page from '@/Components/Product_listing_page'
 import { Product } from '@/type'
 // const inter = inter({ subsets: ['latin'] })
+import { useEffect } from 'react'
+import { useSession } from 'next-auth/react'
+import { addUser, removeUser } from '@/redux/shoperSlice';
+import { useDispatch } from 'react-redux'
 interface Props{
   productData:Product
 }
 export default function Home({productData}:Props) {
-
+  const dispatch = useDispatch();
+  const {data:session} = useSession();
+  useEffect(()=>{
+    if(session){
+      dispatch(addUser({
+        name:session.user?.name,
+        email:session.user?.email,
+        image:session.user?.image
+      }))
+    }
+    else {
+        dispatch(removeUser());
+    }
+},[session,dispatch]);
   return (
     <>
       <Head>
