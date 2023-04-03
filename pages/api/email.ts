@@ -53,17 +53,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       </html>`, alternative: true }, 
       ],
     });
+      res.status(200).end(JSON.stringify({ message: {
+  name:user.name,
+     email:user.email,
+     total_cartvalue:total_cartvalue
+  } }))
   }
   catch (e) {
     res.status(400).end(JSON.stringify({ message: "Error" }))
     return;
   }
 
-  res.status(200).end(JSON.stringify({ message: {
-  name:user.name,
-     email:user.email,
-     total_cartvalue:total_cartvalue
-  } }))
+ 
 }
 
  
