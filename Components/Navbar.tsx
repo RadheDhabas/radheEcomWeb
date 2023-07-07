@@ -32,7 +32,7 @@ const userInfo = useSelector((state:any)=>state.shoper.userInfo);
             <div className={style.custom_navbar}>
                 <div className="container d-flex justify-content-between">
                     <Link href={'/'}>
-                        <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/elm_logo.svg" className={style.navbar_brand} alt="" />
+                        <img src="https://t3.ftcdn.net/jpg/02/47/48/00/240_F_247480017_ST4hotATsrcErAja0VzdUsrrVBMIcE4u.jpg" className={style.navbar_brand} alt="" />
                     </Link>
 
                     <div className={style.categories}>
