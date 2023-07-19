@@ -103,7 +103,7 @@ const {push} = useRouter();
                                     <div className={`${style.checkout_btn}`}>
                                         {
                                             userInfo ?
-                                                <button onClick={handelCheckout2}>
+                                                <button onClick={checkoutSession}>
                                                     Checkout
                                                 </button>
                                                 :
