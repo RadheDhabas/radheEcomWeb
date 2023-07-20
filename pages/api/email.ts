@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } }))
   }
   catch (e) {
-    res.status(400).end(JSON.stringify({ message: "Error" }))
+    res.status(400).end(JSON.stringify({ message: error }))
     return;
   }
 
