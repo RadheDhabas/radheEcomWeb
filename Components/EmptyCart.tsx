@@ -4,6 +4,7 @@ import style from '../styles/Cart.module.css';
 function EmptyCart() {
   return (
     <div className={style.empty_cart}>
+      <p>{process.env.mail}</p>
      <p className={style.empty_cart_heading}>
      Your shopping cart is Empty!
      </p>
